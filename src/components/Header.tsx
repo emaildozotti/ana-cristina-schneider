@@ -47,53 +47,28 @@ export default function Header() {
           animate={{ height: scrolled ? '56px' : '64px' }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Name */}
+          {/* Logo */}
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
-            className="flex items-center gap-2"
+            className="flex items-center"
             style={{ textDecoration: 'none' }}
+            aria-label={SITE.nomeCompleto}
           >
-            <span
-              className="block rounded-full"
+            <img
+              src="/logo.png"
+              alt={`${SITE.nomeCompleto} — ${SITE.especialidadeCurta}`}
               style={{
-                width: '5px',
-                height: '5px',
-                backgroundColor: 'var(--color-secondary)',
-                boxShadow: `0 0 8px color-mix(in srgb, var(--color-secondary) 35%, transparent)`,
-                flexShrink: 0,
+                height: scrolled ? '28px' : '32px',
+                width: 'auto',
+                filter: 'brightness(0) invert(1)',
+                opacity: 0.92,
+                transition: 'height 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             />
-            <span
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '15px',
-                letterSpacing: '0.01em',
-                color: 'var(--color-off-white)',
-                fontWeight: 400,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {SITE.nomeCurto}
-            </span>
-            <span
-              className="hidden sm:inline"
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '8px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.18em',
-                color: `color-mix(in srgb, var(--color-secondary) 45%, transparent)`,
-                fontWeight: 400,
-                marginLeft: '2px',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {SITE.especialidadeCurta}
-            </span>
           </a>
 
           {/* CTA pill */}
