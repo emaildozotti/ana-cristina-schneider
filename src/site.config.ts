@@ -18,4 +18,5 @@ export const SITE = {
   videoUrl: 'https://www.youtube.com/embed/aTYw30eam9Q',
   fotoHero: '/foto-hero.jpg',
   fotoAbout: '/foto-about.jpg',
+  fotoVideo: '/foto-video.jpg',
 }
